@@ -136,7 +136,9 @@ bool LegacyAmixerControl::accessHW(bool receive, std::string &error)
         convertTo(controlName, controlId);
         snd_ctl_elem_id_set_numid(id, controlId);
     } else {
-
+        if (getControlIndex() >= 0) {
+            snd_ctl_elem_id_set_index(id, getControlIndex());
+        }
         snd_ctl_elem_id_set_name(id, controlName.c_str());
     }
     // Init info id

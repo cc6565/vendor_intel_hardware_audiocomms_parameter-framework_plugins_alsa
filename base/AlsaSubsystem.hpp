@@ -47,6 +47,7 @@ public:
         addContextMappingKey("Card");
         addContextMappingKey("Debug");
         addContextMappingKey("Device");
+        addContextMappingKey("Index");
         addContextMappingKey("Amend1");
         addContextMappingKey("Amend2");
         addContextMappingKey("Amend3");

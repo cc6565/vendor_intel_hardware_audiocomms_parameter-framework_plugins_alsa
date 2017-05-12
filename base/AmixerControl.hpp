@@ -89,6 +89,11 @@ protected:
     const std::string getControlName() const { return getFormattedMappingValue(); }
 
     /**
+     * @return the index of the alsa mixer control is specified. Otherwise, returns -1
+     */
+    int getControlIndex() const { return _index; }
+
+    /**
      * Get the parameter scalar size for elementary access
      *
      * @return the parameter scalar size
@@ -146,4 +151,6 @@ private:
     bool _hasWrongElementTypeError;
     /** Debug on */
     bool _isDebugEnabled;
+
+    int _index = -1;
 };

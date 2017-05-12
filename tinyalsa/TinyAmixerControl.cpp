@@ -114,8 +114,10 @@ bool TinyAmixerControl::accessHW(bool receive, std::string &error)
         int32_t controlNumber = 0;
         convertTo(controlName,controlNumber);
         mixerControl = mixer_get_ctl(mixer, controlNumber);
-    } else {
+    } else if (getControlIndex() >= 0){
 
+        mixerControl = mixer_get_ctl_by_name_and_index(mixer, controlName.c_str(), getControlIndex());
+    } else {
         mixerControl = mixer_get_ctl_by_name(mixer, controlName.c_str());
     }
 

@@ -54,6 +54,10 @@ AmixerControl::AmixerControl(const std::string &mappingValue,
       _hasWrongElementTypeError(false),
       _isDebugEnabled(context.iSet(AlsaDebugEnable))
 {
+    if (context.iSet(AlsaCtlIndex)) {
+        _index = context.getItemAsInteger(AlsaCtlIndex);
+    }
+
     // Check we are able to handle elements (no exception support, defer the error)
     switch (instanceConfigurableElement->getType()) {
 

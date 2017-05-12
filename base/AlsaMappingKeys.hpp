@@ -35,6 +35,7 @@ enum AlsaItemType
     AlsaCard = 0,
     AlsaDebugEnable,
     AlsaCtlDevice,
+    AlsaCtlIndex,
     AlsaAmend1,
     AlsaAmend2,
     AlsaAmend3,
